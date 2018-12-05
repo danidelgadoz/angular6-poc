@@ -1,0 +1,67 @@
+@import "../variables/theme";
+
+body {
+    overflow: hidden;
+    max-width: 100%;
+    max-height: 100%;
+
+    margin: 0;
+    padding: 0;
+    font-family: Roboto,Helvetica Neue,sans-serif;
+}
+
+body, html, app-root {
+    height: 100%;
+    min-height: 100%;
+    position: relative;
+}
+
+.wrapper {
+    position: relative;
+    overflow: auto;
+    background-color: $c-white;
+
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+
+    &__header {
+        border-bottom: 2px solid $c-gray-light-alter;
+        padding-bottom: 20px;
+    }
+
+    &__body {
+        position: relative;
+        flex: 1;
+        box-sizing: border-box;
+        background-color: $c-gray-light;
+        border-bottom: 2px solid $c-gray-light-alter;
+        padding: 32px 16px;
+    }
+
+    &__block {
+        min-height: 48px;
+        border-bottom: 2px solid $c-gray-light-alter;
+    }
+
+    &__footer {
+        background-color: $c-gray-light;
+        padding: 30px 50px;
+    }
+    
+    &::-webkit-scrollbar-track{
+        -webkit-box-shadow: inset 0 0 6px transparent;
+    }
+    &::-webkit-scrollbar{
+        width: 8px;
+    }
+    &::-webkit-scrollbar-thumb{
+        -webkit-box-shadow: inset 0 0 6px transparent;
+        background-color: #a5a8ab;
+    }
+    &::-webkit-scrollbar-thumb:hover{
+        background-color: #757678;
+    }
+
+}

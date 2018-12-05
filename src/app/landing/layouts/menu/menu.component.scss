@@ -1,0 +1,15 @@
+nav{
+    a {
+        color: #212529;
+        background-color: #f8f9fa;
+        border-color: #f8f9fa;
+        margin: 0 4px;
+        cursor: pointer;
+
+        &.active {
+            color: #fff;
+            background-color: #007bff;
+            border-color: #007bff;
+        }
+    }
+}

@@ -3,7 +3,11 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  backend: {
+    host: 'http://demo3682812.mockable.io',
+    secret: 'a4f1f550a48f1d25854a48e32ebaf512'
+  },
 };
 
 /*

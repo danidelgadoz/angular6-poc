@@ -1,0 +1,43 @@
+
+  <div class="alert alert-danger margin-b-0 text-center" *ngIf="exchangeForm.get('dollarInput').hasError('pattern')" role="alert">
+    <h6 class="alert-heading text-bold">Formato Incorrecto</h6>
+    <p class="font-size-12">Sólo se permite valores numéricos con un máximo de 4 decimales. <strong>Ejm: 466, 345.567, 3444.53, 56.7899</strong></p>
+  </div>
+
+  <form [formGroup]="exchangeForm" (ngSubmit)="exchangeForm.valid && onCalculate()">
+    <div class="row">
+      <div class="col-md-3 offset-md-3 margin-t-16">
+        <div class="input-group input-group-lg">
+          <div class="input-group-prepend">
+            <span class="input-group-text">USD</span>
+          </div>
+          <input 
+            formControlName="dollarInput"
+            currencyMask
+            [options]="{ prefix: '$ ', thousands: ',', decimal: '.' }"
+            type="text"
+            class="form-control">
+        </div>
+      </div>
+
+      <div class="col-md-3 margin-t-16">
+        <div class="input-group input-group-lg">
+          <div class="input-group-prepend">
+            <span class="input-group-text">EUR</span>
+          </div>
+          <input
+            formControlName="euroInput"
+            currencyMask
+            [options]="{ prefix: '€ ', thousands: ',', decimal: '.' }"
+            type="text"
+            class="form-control eur">
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12 text-center margin-t-32">
+        <button [disabled]="!exchangeForm.valid" type="submit" class="btn btn-primary padding-x-56">CALCULATE</button>
+      </div>
+    </div>
+  </form>
